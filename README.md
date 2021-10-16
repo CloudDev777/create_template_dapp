@@ -1,6 +1,7 @@
 # cra-template-dapp
 
-A project boilerplate for creating EVM Dapps using React, Typescript, Redux, Styled Components, useWeb3React and useDapp.
+A Project Boilerplate Create React App Template for Creating EVM Dapps.  
+Using React, Typescript, Redux, Styled Components, useWeb3React and useDapp.
 
 ## Get Started
 
