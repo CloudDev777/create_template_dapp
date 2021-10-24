@@ -7,6 +7,7 @@ import HomePage from "./pages/home/HomePage";
 import NotFoundPage from "./pages/not-found/NotFoundPage";
 import AnotherPage from "./pages/another-page/AnotherPage";
 import { ChainId, Config, DAppProvider } from "@usedapp/core";
+import Error from "./components/Error";
 
 const StyledApp = styled.div`
   display: flex;
@@ -42,6 +43,7 @@ const App = () => {
           </Switch>
           <Footer />
         </Router>
+        <Error />
       </DAppProvider>
     </StyledApp>
   );

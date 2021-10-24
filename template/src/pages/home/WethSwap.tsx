@@ -2,10 +2,10 @@ import { useState } from "react";
 import styled from "styled-components";
 import { utils } from "ethers";
 
-import constants from "../../app/constants";
 import Button from "../../components/Button";
 import TokenInput from "../../components/TokenInput";
 import { useWrap } from "../../contracts/contracts";
+import useGlobals from "../../app/hooks/use-globals";
 
 const StyledWethSwap = styled.div`
   width: 50rem;
@@ -21,14 +21,14 @@ const StyledWethSwap = styled.div`
 
 const WethSwap = () => {
   const { wrapState, wrap } = useWrap();
-
+  const globals = useGlobals();
   const [value, setValue] = useState("");
 
   return (
     <StyledWethSwap>
       <TokenInput
         eth
-        token={constants.WETH}
+        token={globals.WETH}
         value={value}
         setValue={(v: string) => setValue(v)}
       />
