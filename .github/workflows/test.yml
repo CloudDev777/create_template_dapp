@@ -33,6 +33,3 @@ jobs:
 
       - name: Check types
         run: npm run type-check
-
-      - name: Run test suite
-        run: npm test
