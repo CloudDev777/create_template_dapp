@@ -1,11 +1,11 @@
-import { useState } from 'react';
-import styled from 'styled-components';
-import { utils } from 'ethers';
+import { useState, useEffect } from "react";
+import styled from "styled-components";
+import { utils } from "ethers";
 
-import Button from '../../components/Button';
-import TokenInput from '../../components/TokenInput';
-import { useWrap } from '../../contracts/contracts';
-import useGlobals from '../../app/hooks/use-globals';
+import Button from "../../components/Button";
+import TokenInput from "../../components/TokenInput";
+import { useWrap } from "../../contracts/contracts";
+import useGlobals from "../../app/hooks/use-globals";
 
 const StyledWethSwap = styled.div`
   width: 50rem;
@@ -22,7 +22,11 @@ const StyledWethSwap = styled.div`
 const WethSwap = () => {
   const { wrapState, wrap } = useWrap();
   const globals = useGlobals();
-  const [value, setValue] = useState('');
+  const [value, setValue] = useState("");
+
+  useEffect(() => {
+    if (wrapState.status === "Success") setValue("");
+  }, [wrapState.status]);
 
   return (
     <StyledWethSwap>
@@ -35,7 +39,7 @@ const WethSwap = () => {
       <Button
         text="Wrap ETH"
         click={() => wrap({ value: utils.parseEther(value) })}
-        loading={wrapState.status === 'Mining'}
+        loading={wrapState.status === "Mining"}
       />
     </StyledWethSwap>
   );

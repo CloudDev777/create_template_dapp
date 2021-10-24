@@ -1,4 +1,8 @@
+import { useEthers } from "@usedapp/core";
+import { useEffect, useState } from "react";
+import { useSelector } from "react-redux";
 import styled from "styled-components";
+import { selectError } from "../state/errorSlice";
 
 interface ButtonProps {
   primary?: boolean;
@@ -18,6 +22,7 @@ const StyledButton = styled.button`
   font-size: 1.6rem;
 
   :disabled {
+    cursor: auto;
     background-color: var(--sub);
   }
 `;
@@ -31,13 +36,28 @@ interface Props {
 }
 
 const Button = ({ text, click, primary, disabled, loading }: Props) => {
+  const { account, activateBrowserWallet } = useEthers();
+  const error = useSelector(selectError);
+  const [pending, setPending] = useState(false);
+
+  const isWeb3 = loading !== undefined;
+
+  useEffect(() => {
+    if (error || loading) setPending(false);
+  }, [error, loading]);
+
   return (
     <StyledButton
-      onClick={() => click()}
-      disabled={disabled || loading}
+      onClick={() => {
+        if (loading || disabled || pending) return;
+        if (isWeb3) setPending(true);
+        if (isWeb3 && !account) activateBrowserWallet();
+        else click();
+      }}
+      disabled={disabled || loading || pending}
       primary={primary}
     >
-      {loading ? "Loading..." : text}
+      {isWeb3 && !account ? "Connect Wallet" : loading ? "Loading..." : text}
     </StyledButton>
   );
 };
