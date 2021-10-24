@@ -1,4 +1,3 @@
-import React from "react";
 import styled from "styled-components";
 import exit from "../assets/ui/exit.svg";
 import Button from "./Button";

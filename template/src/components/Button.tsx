@@ -1,4 +1,3 @@
-import React from "react";
 import styled from "styled-components";
 
 interface ButtonProps {
@@ -28,12 +27,17 @@ interface Props {
   click: () => void;
   primary?: boolean;
   disabled?: boolean;
+  loading?: boolean;
 }
 
-const Button = ({ text, click, primary, disabled }: Props) => {
+const Button = ({ text, click, primary, disabled, loading }: Props) => {
   return (
-    <StyledButton onClick={() => click()} disabled={disabled} primary={primary}>
-      {text}
+    <StyledButton
+      onClick={() => click()}
+      disabled={disabled || loading}
+      primary={primary}
+    >
+      {loading ? "Loading..." : text}
     </StyledButton>
   );
 };

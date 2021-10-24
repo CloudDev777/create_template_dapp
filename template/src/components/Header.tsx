@@ -1,4 +1,3 @@
-import React from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 import Connector from "./Connector";
@@ -26,12 +25,12 @@ const StyledHeader = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem;
+  padding: 1rem 3rem;
   border: solid 1px blue;
 `;
 
 const Logo = styled.div`
-  font-size: 3rem;
+  font-size: 2.3rem;
 `;
 
 const NavItems = styled.div`

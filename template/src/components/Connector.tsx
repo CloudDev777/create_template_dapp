@@ -1,4 +1,3 @@
-import React, { useState } from "react";
 import { shortenAddress, useEthers } from "@usedapp/core";
 import Button from "./Button";
 

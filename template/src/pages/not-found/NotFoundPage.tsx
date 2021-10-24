@@ -1,13 +1,11 @@
-import React from "react";
 import styled from "styled-components";
 
 const StyledNotFoundPage = styled.div`
   width: 100%;
   display: flex;
   flex-direction: column;
-  align-items: center;
   flex: 1;
-  font-size: 3rem;
+  font-size: 2.3rem;
   padding: 3rem;
   border: solid 1px red;
 `;

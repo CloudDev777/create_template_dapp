@@ -1,4 +1,3 @@
-import React from "react";
 import styled from "styled-components";
 import twitter from "../assets/socials/twitter.svg";
 import discord from "../assets/socials/discord.svg";

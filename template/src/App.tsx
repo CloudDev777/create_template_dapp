@@ -1,4 +1,3 @@
-import React from "react";
 import styled from "styled-components";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
@@ -20,7 +19,7 @@ const config: Config = {
   readOnlyChainId: ChainId.Mainnet,
   readOnlyUrls: {
     [ChainId.Mainnet]:
-      "https://mainnet.infura.io/v3/62687d1a985d4508b2b7a24827551934",
+      "https://mainnet.infura.io/v3/f42c3f37e40b4ab1bc5a0d7bf5612d0f",
   },
 };
 
