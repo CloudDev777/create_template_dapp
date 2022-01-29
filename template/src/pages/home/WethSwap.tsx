@@ -4,7 +4,7 @@ import { utils } from "ethers";
 
 import Button from "../../components/Button";
 import TokenInput from "../../components/TokenInput";
-import { useWrap } from "../../contracts/contracts";
+import { useWrap } from "../../contracts/functions";
 import useGlobals from "../../app/hooks/use-globals";
 
 const StyledWethSwap = styled.div`
