@@ -1,9 +1,9 @@
 import styled from "styled-components";
 import { Outlet } from "react-router-dom";
+import { ChainId, Config, DAppProvider } from "@usedapp/core";
 
 import Footer from "./components/Footer";
 import Header from "./components/Header";
-import { ChainId, Config, DAppProvider } from "@usedapp/core";
 import Error from "./components/Error";
 import { INFURA_ID } from "./app/globals";
 

@@ -7,11 +7,11 @@ const Error = () => {
   const dispatch = useDispatch();
   const error = useSelector(selectError);
 
-  if (!error) return <></>;
+  if (!error) return null;
 
   return (
     <Popup
-      show={true}
+      show
       header={error.header}
       subHeader={error.subHeader}
       buttonText={

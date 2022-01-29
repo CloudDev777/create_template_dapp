@@ -75,7 +75,7 @@ const Popup = ({
   buttonAction,
   content,
 }: Props) => {
-  if (!show) return <></>;
+  if (!show) return null;
 
   return (
     <StyledPopup>
