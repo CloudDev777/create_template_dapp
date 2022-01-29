@@ -2,10 +2,10 @@ import { Link } from "react-router-dom";
 import styled from "styled-components";
 import Connector from "./Connector";
 
-type NavItemType = {
+interface NavItemType {
   label: string;
   link: string;
-};
+}
 
 // We can delete this after launch
 const navItems: NavItemType[] = [
