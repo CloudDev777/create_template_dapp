@@ -9,7 +9,18 @@ An example Dapp is included for converting ETH to WETH, this is to show how you 
 ## Get started
 
 Before this Dapp is production ready, you will need to make a few changes!  
-First, go to `src/App.tsx` and update the `readOnlyUrls` with your own Infura URL (You can get one [here](https://infura.io/)).
+First, go to `src/app/globals.ts` and update the `INFURA_ID` with your own Infura ID (You can get one [here](https://infura.io/)).
+
+### Firebase Setup
+
+- Setup an account with [Firebase](https://firebase.google.com/)
+- Create a new Project for the hosting
+- Edit `.github/workflows/ci.yml` and replace `project-id` with your new Project ID from Firebase
+- Install Firebase CLI with `npm install -g firebase-tools`
+- Login to the Firebase CLI with `firebase login:ci`
+- Copy the secret that is output to your console and create a GitHub secret for it as `FIREBASE_SECRET`
+- Follow the steps [here](https://github.com/FirebaseExtended/action-hosting-deploy/blob/main/docs/service-account.md) to create a Firebase Service Account
+- Copy the secret and create a GitHub secret for it as `FIREBASE_SERVICE_ACCOUNT`
 
 ## Available Scripts
 
