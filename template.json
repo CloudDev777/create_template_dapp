@@ -3,6 +3,7 @@
     "dependencies": {
       "@reduxjs/toolkit": "^1.5.1",
       "@usedapp/core": "^0.10.0",
+      "@web3-react/walletconnect-connector": "^6.2.10",
       "react-redux": "^7.2.0",
       "typescript": "~4.5.5",
       "styled-components": "^5.3.3",
