@@ -3,7 +3,7 @@ import { useState } from "react";
 import styled from "styled-components";
 import { utils } from "ethers";
 
-import { useTokenSymbol } from "../contracts/functions";
+import { useTokenSymbol } from "../contracts/views";
 
 const StyledTokenInput = styled.div`
   width: 100%;
