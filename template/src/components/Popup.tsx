@@ -1,3 +1,4 @@
+import { ReactNode } from "react";
 import styled from "styled-components";
 import exit from "../assets/ui/exit.svg";
 import Button from "./Button";
@@ -56,6 +57,12 @@ const SubHeader = styled.div`
   color: var(--sub);
 `;
 
+const Content = styled.div`
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+`;
+
 interface Props {
   show: boolean;
   close: () => void;
@@ -63,7 +70,7 @@ interface Props {
   subHeader?: string;
   buttonText?: string;
   buttonAction?: () => void;
-  content?: JSX.Element;
+  children?: ReactNode;
 }
 
 const Popup = ({
@@ -73,7 +80,7 @@ const Popup = ({
   subHeader,
   buttonText,
   buttonAction,
-  content,
+  children,
 }: Props) => {
   if (!show) return null;
 
@@ -86,9 +93,11 @@ const Popup = ({
         </ExitButton>
         {header && <Header>{header}</Header>}
         {subHeader && <SubHeader>{subHeader}</SubHeader>}
-        {content && content}
+        {children && <Content>{children}</Content>}
         {buttonText && buttonAction && (
-          <Button primary text={buttonText} click={buttonAction} />
+          <Button primary click={buttonAction}>
+            {buttonText}
+          </Button>
         )}
       </Container>
     </StyledPopup>

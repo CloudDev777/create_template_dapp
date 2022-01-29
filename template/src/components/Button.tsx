@@ -1,5 +1,5 @@
 import { useEthers } from "@usedapp/core";
-import { useEffect, useState } from "react";
+import { ReactNode, useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import styled from "styled-components";
 import { selectError } from "../state/errorSlice";
@@ -28,14 +28,14 @@ const StyledButton = styled.button`
 `;
 
 interface Props {
-  text: string;
   click: () => void;
   primary?: boolean;
   disabled?: boolean;
   loading?: boolean;
+  children?: ReactNode;
 }
 
-const Button = ({ text, click, primary, disabled, loading }: Props) => {
+const Button = ({ children, click, primary, disabled, loading }: Props) => {
   const { account, activateBrowserWallet } = useEthers();
   const error = useSelector(selectError);
   const [pending, setPending] = useState(false);
@@ -57,7 +57,11 @@ const Button = ({ text, click, primary, disabled, loading }: Props) => {
       disabled={disabled || loading || pending}
       primary={primary}
     >
-      {isWeb3 && !account ? "Connect Wallet" : loading ? "Loading..." : text}
+      {isWeb3 && !account
+        ? "Connect Wallet"
+        : loading
+        ? "Loading..."
+        : children}
     </StyledButton>
   );
 };

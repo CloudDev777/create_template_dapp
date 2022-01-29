@@ -5,10 +5,9 @@ const Connector = () => {
   const { account, activateBrowserWallet } = useEthers();
 
   return (
-    <Button
-      text={account ? shortenAddress(account) : "Connect Wallet"}
-      click={() => activateBrowserWallet()}
-    />
+    <Button click={() => activateBrowserWallet()}>
+      {account ? shortenAddress(account) : "Connect Wallet"}
+    </Button>
   );
 };
 

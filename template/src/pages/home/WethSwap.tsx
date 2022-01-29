@@ -37,10 +37,11 @@ const WethSwap = () => {
         setValue={(v: string) => setValue(v)}
       />
       <Button
-        text="Wrap ETH"
         click={() => wrap({ value: utils.parseEther(value) })}
         loading={wrapState.status === "Mining"}
-      />
+      >
+        Wrap ETH
+      </Button>
     </StyledWethSwap>
   );
 };
