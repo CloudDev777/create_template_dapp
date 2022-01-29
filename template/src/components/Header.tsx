@@ -7,6 +7,7 @@ type NavItemType = {
   link: string;
 };
 
+// We can delete this after launch
 const navItems: NavItemType[] = [
   {
     label: "Home",
