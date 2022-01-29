@@ -1,9 +1,14 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { RootState } from "./store";
 
+export enum ErrorButtonType {
+  SWITCH_TO_MAINNET = "Switch to mainnet",
+}
+
 interface ErrorType {
   header: string;
   subHeader: string;
+  button?: ErrorButtonType;
 }
 
 interface ErrorState {

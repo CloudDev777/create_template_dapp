@@ -17,7 +17,7 @@ const useContract = (
     new Contract(address, new utils.Interface(abi)),
     functionName,
     {
-      transactionName: transactionName,
+      transactionName,
     }
   );
 

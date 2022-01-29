@@ -1,9 +1,11 @@
 import { configureStore, ThunkAction, Action } from "@reduxjs/toolkit";
 import errorReducer from "./errorSlice";
+import uiReducer from "./uiSlice";
 
 export const store = configureStore({
   reducer: {
     error: errorReducer,
+    ui: uiReducer,
   },
 });
 
