@@ -16,6 +16,7 @@ First, go to `src/app/globals.ts` and update the `INFURA_ID` with your own Infur
 - Setup an account with [Firebase](https://firebase.google.com/)
 - Create a new Project for the hosting
 - Edit `.github/workflows/ci.yml` and replace `project-id` with your new Project ID from Firebase
+- Edit `.firebaserc` and replace `project-id` with your new Project ID from Firebase
 - Install Firebase CLI with `npm install -g firebase-tools`
 - Login to the Firebase CLI with `firebase login:ci`
 - Copy the secret that is output to your console and create a GitHub secret for it as `FIREBASE_SECRET`
