@@ -9,7 +9,25 @@ import Popup from "./Popup";
 import { INFURA_ID } from "../app/globals";
 import { selectConnectingWallet, walletConnected } from "../state/uiSlice";
 
+export const supportedChainIds = [
+  ...Array.from(Array(1000).keys()),
+  1337,
+  42161,
+  43114,
+  8217,
+  42220,
+  42262,
+  32659,
+  1284,
+  4689,
+  10000,
+  333999,
+  1313161554,
+  1666600000,
+];
+
 export const walletConnectConnector = new WalletConnectConnector({
+  supportedChainIds,
   rpc: {
     1: `https://mainnet.infura.io/v3/${INFURA_ID}`,
     4: `https://rinkeby.infura.io/v3/${INFURA_ID}`,
