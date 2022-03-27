@@ -16,6 +16,7 @@ const StyledApp = styled.div`
 `;
 
 const config: Config = {
+  autoConnect: false,
   readOnlyChainId: ChainId.Mainnet,
   readOnlyUrls: {
     [ChainId.Mainnet]: `https://mainnet.infura.io/v3/${INFURA_ID}`,
