@@ -1,4 +1,3 @@
-import { useEffect } from "react";
 import styled from "styled-components";
 import { WalletConnectConnector } from "@web3-react/walletconnect-connector";
 import { useEthers } from "@usedapp/core";
